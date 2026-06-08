@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Better Grammar — Grammar Practice for Adults</title>
+  <meta name="description" content="Better Grammar helps adults stop second-guessing common grammar rules. Adaptive, non-stop practice with three exercise modes. Available on iOS and Android.">
+  <meta property="og:title" content="Better Grammar — Grammar Practice for Adults">
+  <meta property="og:description" content="Adaptive grammar drills that find the rules you actually trip on. Five difficulty levels, three exercise modes, US/UK/AU English support.">
+  <meta property="og:url" content="https://benkaiser.github.io/better-grammar/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="images/icon.svg">
+  <style>
+    :root {
+      --primary: #1E5ED1;
+      --primary-light: #3B82F6;
+      --accent: #F59E0B;
+      --bg: #FAFAFA;
+      --text: #1A1A2E;
+      --text-muted: #555;
+      --card-bg: #fff;
+      --section-alt: #E6EEFB;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 0.8rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    nav .logo { display: flex; align-items: center; gap: 0.6rem; font-weight: 700; font-size: 1.2rem; color: var(--primary); text-decoration: none; }
+    nav .logo img { width: 36px; height: 36px; border-radius: 8px; }
+    nav a.cta-link { color: var(--primary); font-weight: 600; text-decoration: none; }
+
+    /* HERO */
+    .hero {
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+      background: linear-gradient(170deg, var(--section-alt) 0%, var(--bg) 100%);
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 1rem; }
+    .hero h1 span { color: var(--primary); }
+    .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 560px; margin: 0 auto 2rem; }
+    .store-badges { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .store-badges a {
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+    .store-badges a:hover { transform: translateY(-2px); }
+    .store-badges img { height: 50px; }
+
+    /* SCREENSHOTS */
+    .screenshots {
+      padding: 3rem 1rem;
+      overflow-x: auto;
+    }
+    .screenshots-inner {
+      display: flex; gap: 1.5rem; justify-content: center; flex-wrap: nowrap;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .screenshots img {
+      height: 480px; border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      flex-shrink: 0;
+    }
+
+    /* FEATURES */
+    .features {
+      padding: 5rem 2rem;
+      background: var(--section-alt);
+    }
+    .features h2 { text-align: center; font-size: 2rem; margin-bottom: 3rem; }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem; max-width: 960px; margin: 0 auto;
+    }
+    .feature-card {
+      background: var(--card-bg); border-radius: 16px; padding: 2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .feature-card .icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .feature-card h3 { margin-bottom: 0.5rem; }
+    .feature-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+    /* LEVELS */
+    .levels { padding: 5rem 2rem; max-width: 800px; margin: 0 auto; }
+    .levels h2 { text-align: center; font-size: 2rem; margin-bottom: 2.5rem; }
+    .level-item {
+      display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;
+    }
+    .level-num {
+      flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%;
+      background: var(--primary); color: #fff; display: flex; align-items: center;
+      justify-content: center; font-weight: 700;
+    }
+    .level-item h3 { margin-bottom: 0.2rem; }
+    .level-item p { color: var(--text-muted); font-size: 0.95rem; }
+
+    /* CTA */
+    .cta-section {
+      padding: 5rem 2rem; text-align: center;
+      background: linear-gradient(170deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: #fff;
+    }
+    .cta-section h2 { font-size: 2rem; margin-bottom: 1rem; }
+    .cta-section p { margin-bottom: 2rem; opacity: 0.9; font-size: 1.1rem; }
+
+    /* FOOTER */
+    footer {
+      padding: 2rem; text-align: center; color: var(--text-muted); font-size: 0.85rem;
+    }
+    footer a { color: var(--primary); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">
+    <img src="images/icon.svg" alt="Better Grammar icon">
+    Better Grammar
+  </a>
+  <a href="#download" class="cta-link">Download</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Grammar practice for <span>adults</span></h1>
+  <p>Adaptive, non-stop drills that find the rules you actually trip on. No quizzes, no fluff, just you and the patterns you keep second-guessing.</p>
+  <div class="store-badges" id="download">
+    <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store"></a>
+    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play"></a>
+  </div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section class="screenshots">
+  <div class="screenshots-inner">
+    <img src="images/screenshots/home.png" alt="Home screen" loading="lazy">
+    <img src="images/screenshots/practice.png" alt="Practice exercise" loading="lazy">
+    <img src="images/screenshots/rule_detail.png" alt="Rule detail screen" loading="lazy">
+    <img src="images/screenshots/rule_browser.png" alt="Rule browser" loading="lazy">
+    <img src="images/screenshots/paywall.png" alt="Premium upgrade" loading="lazy">
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <h2>Why Better Grammar?</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="icon">🎯</div>
+      <h3>Adaptive Practice</h3>
+      <p>The app identifies rules you struggle with and builds a personal practice bank, using spaced repetition to lock them into memory.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🧠</div>
+      <h3>Three Exercise Modes</h3>
+      <p>Multiple choice, spot-the-error, and fix-the-sentence. Each mode unlocks as you master the previous one for that rule.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">📖</div>
+      <h3>Deep Rule Explanations</h3>
+      <p>Every rule comes with examples, a "how to tell" trick, and the etymology so you understand the pattern, not just the answer.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">♾️</div>
+      <h3>Non-Stop Mode</h3>
+      <p>No rounds, no timers. Practice flows continuously, mixing new rules with review at the perfect pace.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🔍</div>
+      <h3>Find Specific Rules</h3>
+      <p>Searched the catalogue when something specific is nagging you. Browse 150+ rules grouped by difficulty and jump straight into focused practice.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🌍</div>
+      <h3>Multiple English Regions</h3>
+      <p>Supports US, British, and Australian English conventions. Rules that differ by region (like restrictive <em>which</em> vs. <em>that</em>) are tailored to your selection.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LEVELS -->
+<section class="levels">
+  <h2>Five Difficulty Levels</h2>
+  <div class="level-item">
+    <div class="level-num">1</div>
+    <div>
+      <h3>Common Mistakes</h3>
+      <p>their/there, your/you're, its/it's — the rules every adult occasionally fumbles.</p>
+    </div>
+  </div>
+  <div class="level-item">
+    <div class="level-num">2</div>
+    <div>
+      <h3>Everyday Grammar</h3>
+      <p>Subject-verb agreement, tense consistency, commas, and apostrophes.</p>
+    </div>
+  </div>
+  <div class="level-item">
+    <div class="level-num">3</div>
+    <div>
+      <h3>Professional Writing</h3>
+      <p>who/whom, lay/lie, fewer/less, and dangling modifiers. The rules your work emails are quietly judging you on.</p>
+    </div>
+  </div>
+  <div class="level-item">
+    <div class="level-num">4</div>
+    <div>
+      <h3>Advanced</h3>
+      <p>Subjunctive mood, none is/are, comprise/compose, and other nuanced distinctions.</p>
+    </div>
+  </div>
+  <div class="level-item">
+    <div class="level-num">5</div>
+    <div>
+      <h3>Mastery</h3>
+      <p>Em dash vs. en dash, Oxford comma edge cases, advanced participle attachment. Style-guide territory.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="download-bottom">
+  <h2>Ready to grammar better?</h2>
+  <p>Download now and start improving in minutes.</p>
+  <div class="store-badges">
+    <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store"></a>
+    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play"></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Better Grammar. <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · <a href="support.html">Support</a></p>
+</footer>
+
+</body>
+</html>
